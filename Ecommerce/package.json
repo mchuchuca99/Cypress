@@ -1,0 +1,21 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "Tienda Online",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Miguel Chuchuca",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^14.1.0"
+  },
+  "devDependencies": {
+    "@applitools/eyes-cypress": "^3.50.2",
+    "cypress-xpath": "^2.0.1"
+  }
+}
