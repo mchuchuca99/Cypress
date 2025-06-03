@@ -12,7 +12,8 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-//APPLITOOLS_API_KEY=1QMmLT5h105fS8AtCWoR9etOhTuDCPLWQCbfOtYhUwxEM110
+//APPLITOOLS_API_KEY="1QMmLT5h105fS8AtCWoR9etOhTuDCPLWQCbfOtYhUwxEM110"
+//set APPLITOOLS_API_KEY=<1QMmLT5h105fS8AtCWoR9etOhTuDCPLWQCbfOtYhUwxEM110>
 import "@applitools/eyes-cypress/commands";
 
 // Import commands.js using ES2015 syntax:

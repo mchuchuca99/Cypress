@@ -20,11 +20,11 @@ describe("Compra de un producto en DEMOBLAZE", () => {
       resultadoEsperadoProducto
     ) => {
       //Seleccionamos una categoria de producto
-      cy.xpath(categoria(cagoriaIndex)).click();
+      cy.xpath(categoria(cagoriaIndex)).click().wait(3000);
       //Seleccionamos un producto de la categoria
-      cy.xpath(producto(productoIndex)).click();
+      cy.xpath(producto(productoIndex)).click().wait(3000);
       //Agregamos el producto al carrito
-      cy.xpath(BotonAgregarProducto).should("exist").click();
+      cy.xpath(BotonAgregarProducto).should("exist").click().wait(3000);
       //Pasamos la alerta
       cy.on("window:alert", (str) => {
         expect(str).to.equal("Product added");
@@ -48,13 +48,14 @@ describe("Compra de un producto en DEMOBLAZE", () => {
     cy.get("#name").type("Juan{enter}").wait(3000);
     cy.get("#country").type("Ecuador{enter}").wait(3000);
     cy.get("#city").type("Quito{enter}").wait(3000);
-    cy.get("#card").type("1234567890124552{enter}").wait(3000);
+    cy.get("#card").type("1234567890124552{enter}");
     cy.get("#month").type("Mayo{enter}").wait(3000);
     cy.get("#year").type("2025{enter}").wait(3000);
     //Finalizar la compra
-    cy.xpath('//*[@id="orderModal"]/div/div/div[3]/button[2]')
+    cy
+      .xpath('//*[@id="orderModal"]/div/div/div[3]/button[2]')
       .click()
-      .wait(3000);
-    cy.xpath("/html/body/div[10]/div[7]/div/button").click();
+      .wait(3000),
+      cy.xpath("/html/body/div[10]/div[7]/div/button").click();
   });
 });

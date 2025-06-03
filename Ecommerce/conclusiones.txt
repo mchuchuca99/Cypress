@@ -1,0 +1,29 @@
+# Conclusiones - Prueba E2E en Demoblaze con Cypress
+
+##  Hallazgos
+
+1. **Tiempo de respuesta del sitio:**  
+   - Se identificó un retraso en la carga de los productos en la página principal (2-3 segundos).
+   - Se solucionó utilizando `cy.wait()` para mejorar la sincronización.
+
+2. **Interacción con el carrito:**  
+   - El botón "Add to cart" requiere aceptar una alerta, lo cual se gestionó con `cy.on('window:alert')`.
+
+3. **Flujo de compra:**  
+   - Se validó que los productos se agregaran correctamente al carrito y coincidieran con los seleccionados.
+   - Se detectó que algunos elementos dinámicos necesitan esperas explícitas (`cy.wait()` o `cy.should('exist')`).
+
+4. **Validación de compra exitosa:**  
+
+   - Se confirmó que la información ingresada en el formulario se almacena correctamente.
+
+---
+
+## 📌 Conclusiones
+
+- **Cypress es una herramienta robusta** para pruebas E2E en sitios web con interacciones dinámicas.
+- **Optimizar la espera de elementos** es clave para evitar flujos interrumpidos en pruebas automáticas.
+- La integración de **Mochawesome Reports** facilitó la documentación de los resultados de prueba.
+- **Demoblaze presenta retrasos ocasionales** en la carga de productos, lo que requiere manejo adecuado con `cy.wait)`.
+
+📢 **Próximos pasos:** Mejorar la parametrización de pruebas y evaluar posibles mejoras en la automatización del flujo de compra.

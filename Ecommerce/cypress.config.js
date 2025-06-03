@@ -3,6 +3,15 @@ const eyesPlugin = require("@applitools/eyes-cypress");
 
 module.exports = eyesPlugin(
   defineConfig({
+    reporter: "mochawesome",
+    reporterOptions: {
+      reportDir: "cypress/reports",
+      overwrite: false,
+      html: true,
+      json: true,
+      timestamp: "mmddyyyy_HHMMss",
+    },
+
     e2e: {
       testIsolation: false,
       setupNodeEvents(on, config) {
