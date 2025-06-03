@@ -1,0 +1,26 @@
+# 📌 CONCLUSIONES - Pruebas de API en Demoblaze con Karate
+
+##  Hallazgos
+
+1. **Registro de usuario (Signup)**
+   - Se verificó que la API `https://api.demoblaze.com/signup` permite la creación de nuevos usuarios.
+   - La respuesta correcta al registro es `200 OK`, con un mensaje indicando éxito.
+
+2. **Inicio de sesión (Login)**
+   - La API `https://api.demoblaze.com/login` requiere credenciales válidas para autenticar a un usuario.
+   - Al ingresar credenciales incorrectas, devuelve un error `401 Unauthorized`.
+
+3. **Seguridad y validaciones**
+   - No se observó implementación de **cifrado de credenciales** en las respuestas.
+   - La autenticación parece depender exclusivamente de un **JWT**, sin validaciones adicionales como autenticación en dos pasos.
+   - Se recomienda validar usuarios duplicados en `signup` y mejorar la gestión de errores en `login`.
+
+---
+
+## 📌 Conclusiones generales
+
+- **Karate es una herramienta eficiente para pruebas de API REST**, permitiendo validar respuestas y tiempos de ejecución fácilmente.
+- **La API de Demoblaze funciona correctamente**, pero presenta oportunidades de mejora en **seguridad y manejo de errores**.
+- **La ausencia de validación de usuarios duplicados en Signup** puede generar problemas de consistencia en la plataforma.
+- **La prueba se replicó correctamente** utilizando scripts en Karate, garantizando su reproducibilidad en otros entornos.
+
